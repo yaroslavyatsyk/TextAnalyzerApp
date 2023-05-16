@@ -32,24 +32,27 @@ namespace TextAnalyzerFinal
         }
         public int CalculateWordAmount()
         {
-            return sentence.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@'}).Split(' ', StringSplitOptions.RemoveEmptyEntries).Length;
+            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+
+            return sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length;
         }
 
         public Tuple<string, int> GetLongWord()
         {
 
-           string[] words = sentence.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Split(' ');
-          
+           string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
 
-            string longWord = words[0].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' });
-            int maxLength = words[0].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Length;
+            string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            string longWord = words[0];
+            int maxLength = words[0].Length;
 
             for(int i = 0; i < words.Length; i++)
             {
-                if(words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Length > maxLength)
+                if (words[i].Length > maxLength)
                 {
-                    longWord = words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' });
-                    maxLength = words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Length;
+                    longWord = words[i];
+                    maxLength = words[i].Length;
                 }
             }
 
@@ -84,21 +87,26 @@ namespace TextAnalyzerFinal
         public Tuple<string, int> GetShortWord()
 
         {
-            string[] words = sentence.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Split(' ', StringSplitOptions.RemoveEmptyEntries);
+           string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
 
+            string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-            string shortWord = words[0].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' });
-            int minLength = words[0].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Length;
+            string shortWord = words[0];
+            int minLength = words[0].Length;
 
-            for (int i = 0; i < words.Length; i++)
+            for(int i = 0; i < words.Length; i++)
             {
-                if (words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Length < minLength)
+                if (words[i].Length < minLength)
                 {
-                    shortWord = words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' });
-                    minLength = words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Length;
+                    shortWord = words[i];
+                    minLength = words[i].Length;
                 }
             }
+
             return Tuple.Create(shortWord, minLength);
+
+
+
         }
         private Dictionary<char, int> GetSpecialCharactersOccurance()
         {
@@ -165,7 +173,9 @@ namespace TextAnalyzerFinal
         {
             double result = 0d;
 
-            string[] words = sentence.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Split(' ');
+           string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+
+            string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             for(int i = 0; i < words.Length; i++)
             {
@@ -180,21 +190,27 @@ namespace TextAnalyzerFinal
         {
             List<string> uniqueList = new List<string>();
 
-            string[] words = sentence.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            
+            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+
+            string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
 
-            Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+          Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
 
-            foreach (string word in words)
+
+            for(int i = 0; i < words.Length; i++)
             {
-                if (keyValuePairs.ContainsKey(word.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' })))
+
+                if (keyValuePairs.ContainsKey(words[i]))
                 {
-                    keyValuePairs[word.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' })]++;
-            }
-            else
+
+                    keyValuePairs[words[i]]++;
+                }
+                else
                 {
-                keyValuePairs.Add(word.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }), 1);
-            }
+                    keyValuePairs.Add(words[i], 1);
+                }
             }
 
             foreach (KeyValuePair<string, int> item in keyValuePairs)
@@ -208,27 +224,33 @@ namespace TextAnalyzerFinal
 
 
         }
-        public List<string> GetRepeatWordList()
+        public List<string> GetListOfDuplicateWords()
         {
             List<string> wordList = new List<string>();
 
-            string[] words = sentence.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Split(' ', StringSplitOptions.RemoveEmptyEntries);
+           
 
+            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+
+            string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
         
+           
+
             Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
 
 
-            for(int i = 0; i < words.Length; i++)
+            for (int i = 0; i < words.Length; i++)
             {
-                if (keyValuePairs.ContainsKey(words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' })))
+                if (keyValuePairs.ContainsKey(words[i]))
                 {
-                    keyValuePairs[words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' })]++;
+                    keyValuePairs[words[i]]++;
                 }
                 else
                 {
-                    keyValuePairs.Add(words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }), 1);
+                    keyValuePairs.Add(words[i], 1);
                 }
             }
+
 
             foreach(KeyValuePair<string, int> item in keyValuePairs)
             {
