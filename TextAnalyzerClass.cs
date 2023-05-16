@@ -163,7 +163,7 @@ namespace TextAnalyzerFinal
 
         public double GetAverageWordLength()
         {
-            double result = 0;
+            double result = 0d;
 
             string[] words = sentence.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Split(' ');
 
@@ -240,6 +240,24 @@ namespace TextAnalyzerFinal
             return wordList;
 
            
+        }
+
+        public Dictionary<string,int> GetWordsFrequency()
+        {
+            Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+            string[] words = sentence.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            for(int i = 0; i < words.Length; i++)
+            {
+                if (keyValuePairs.ContainsKey(words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' })))
+                {
+                    keyValuePairs[words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' })]++;
+                }
+                else
+                {
+                    keyValuePairs.Add(words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }), 1);
+                }
+            }
+            return keyValuePairs;
         }
 
 
