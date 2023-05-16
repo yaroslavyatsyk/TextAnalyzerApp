@@ -266,19 +266,24 @@ namespace TextAnalyzerFinal
 
         public Dictionary<string,int> GetWordsFrequency()
         {
+            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+
+            string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
             Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
-            string[] words = sentence.Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }).Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
             for(int i = 0; i < words.Length; i++)
             {
-                if (keyValuePairs.ContainsKey(words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' })))
+                if (keyValuePairs.ContainsKey(words[i]))
                 {
-                    keyValuePairs[words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' })]++;
+                    keyValuePairs[words[i]]++;
                 }
                 else
                 {
-                    keyValuePairs.Add(words[i].Trim(new char[] { '!', '.', ',', '(', ')', '&', '@' }), 1);
+                    keyValuePairs.Add(words[i], 1);
                 }
             }
+
             return keyValuePairs;
         }
 
