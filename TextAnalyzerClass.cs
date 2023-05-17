@@ -298,6 +298,39 @@ namespace TextAnalyzerFinal
             return result;
         }
 
+        public Dictionary<string,Dictionary<char,int>> GetCharacterFrequencyPerWord()
+        {
+
+            Dictionary<string, Dictionary<char,int>> keyValuePairs = new Dictionary<string, Dictionary<char, int>>();
+
+            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+
+            string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            for(int i = 0; i < words.Length; i++)
+            {
+               
+
+                Dictionary<char, int> charFrequency = new Dictionary<char, int>();
+                for(int j = 0; j < words[i].Length; j++)
+                {
+                    if (charFrequency.ContainsKey(words[i][j]))
+                    {
+                        charFrequency[words[i][j]]++;
+                    }
+                    else
+                    {
+                        charFrequency.Add(words[i][j], 1);
+                    }
+                }
+                keyValuePairs.Add(words[i], charFrequency);
+            }
+
+
+            return keyValuePairs;
+
+        }
+
 
 
     }
