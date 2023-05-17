@@ -152,7 +152,7 @@ namespace TextAnalyzerFinal
 
         public Dictionary<string,int> GetWordsFrequency()
         {
-            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
@@ -222,10 +222,10 @@ namespace TextAnalyzerFinal
             return result;
         }
 
-        public Dictionary<string,Dictionary<char,int>> GetCharacterFrequencyPerWord()
+        public List<KeyValuePair<string,Dictionary<char,int>>> GetCharacterFrequencyPerWord()
         {
 
-            Dictionary<string, Dictionary<char,int>> keyValuePairs = new Dictionary<string, Dictionary<char, int>>();
+            List<KeyValuePair<string, Dictionary<char,int>>> keyValuePairs = new List<KeyValuePair<string, Dictionary<char, int>>>();
 
             string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
 
@@ -247,7 +247,9 @@ namespace TextAnalyzerFinal
                         charFrequency.Add(words[i][j], 1);
                     }
                 }
-                keyValuePairs.Add(words[i], charFrequency);
+
+                keyValuePairs.Add(new KeyValuePair<string, Dictionary<char, int>>(words[i], charFrequency));
+                
             }
 
 
