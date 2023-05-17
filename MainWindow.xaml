@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Menu x:Name="menu" Margin="0,0,0,395">
+            <MenuItem Header="File">
+                <MenuItem Header="Open"/>
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+        </Menu>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="280,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Enter the text, here ->" HorizontalAlignment="Left" Margin="123,160,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Analyze" HorizontalAlignment="Left" Margin="300,344,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
