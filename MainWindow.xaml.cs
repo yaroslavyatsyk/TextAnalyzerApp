@@ -76,6 +76,9 @@ namespace TextAnalyzerApp
 
             CharacterFrequencyPerWordWindow characterFrequencyPerWordWindow = new CharacterFrequencyPerWordWindow(analyzerClass);
             characterFrequencyPerWordWindow.Show();
+
+            PunctuationMarkFrequencyWindow punctuationMarkFrequencyWindow = new PunctuationMarkFrequencyWindow(analyzerClass);
+            punctuationMarkFrequencyWindow.Show();
         }
     }
 }
