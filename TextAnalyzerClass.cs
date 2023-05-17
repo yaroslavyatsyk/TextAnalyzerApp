@@ -244,7 +244,7 @@ namespace TextAnalyzerFinal
                     }
                     else
                     {
-                        charFrequency.Add(words[i][j], 1);
+                        charFrequency.TryAdd(words[i][j], 1);
                     }
                 }
                 keyValuePairs.Add(new KeyValuePair<string, Dictionary<char, int>>(words[i], charFrequency));
