@@ -43,6 +43,12 @@ namespace TextAnalyzerApp
             textBox6.Text = analyzerClass.CalculateLettersAmount().ToString();
 
             textBox7.Text = analyzerClass.GetVowelsAmount().ToString();
+
+            textBox8.Text = analyzerClass.GetConsonantsAmount().ToString();
+
+            textBox9.Text = analyzerClass.GetAverageWordLength().ToString();
+
+            textBox10.Text = analyzerClass.GetPunctuationMarksAmount().ToString();
         }
     }
 }

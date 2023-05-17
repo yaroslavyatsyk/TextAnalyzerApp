@@ -23,6 +23,12 @@
         <TextBox x:Name="textBox6" HorizontalAlignment="Left" Margin="165,287,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
         <Label x:Name="label7" Content="Amount of vowels" HorizontalAlignment="Left" Margin="58,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.579"/>
         <TextBox x:Name="textBox7" HorizontalAlignment="Left" Margin="169,324,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <Label x:Name="label8" Content="Amount of consonants" HorizontalAlignment="Left" Margin="46,364,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox8" HorizontalAlignment="Left" Margin="181,368,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <Label x:Name="label9" Content="Average Length Of Words" HorizontalAlignment="Left" Margin="400,32,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox9" HorizontalAlignment="Left" Margin="552,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <Label x:Name="label10" Content="Amount of puntuation marks" HorizontalAlignment="Left" Margin="412,74,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox10" HorizontalAlignment="Left" Margin="580,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
 
     </Grid>
 </Window>

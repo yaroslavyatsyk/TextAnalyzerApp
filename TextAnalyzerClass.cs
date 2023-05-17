@@ -322,6 +322,21 @@ namespace TextAnalyzerFinal
         }
 
 
+        public int GetPunctuationMarksAmount()
+        {
+            int result = 0;
+            
+            foreach(char symbol in sentence)
+            {
+                if(!char.IsLetterOrDigit(symbol) && !char.IsWhiteSpace(symbol))
+                {
+                    result++;
+                }
+            }
+            return result;
+        }
+
+
 
     }
 }
