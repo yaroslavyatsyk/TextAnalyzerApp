@@ -32,9 +32,11 @@ namespace TextAnalyzerApp
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
+
                 string filename = openFileDialog.FileName;
                 string text = System.IO.File.ReadAllText(filename);
                
