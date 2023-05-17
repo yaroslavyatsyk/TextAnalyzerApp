@@ -70,6 +70,9 @@ namespace TextAnalyzerApp
 
             AnalyzerWindow analyzerWindow = new AnalyzerWindow(analyzerClass);
             analyzerWindow.Show();
+
+            WordFrequencyWindow wordFrequencyWindow = new WordFrequencyWindow(analyzerClass);
+            wordFrequencyWindow.Show();
         }
     }
 }
