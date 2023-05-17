@@ -42,6 +42,17 @@ namespace TextAnalyzerApp
 
                 AnalyzerWindow analyzerWindow = new AnalyzerWindow(analyzerClass);
 
+                PunctuationMarkFrequencyWindow punctuationMarkFrequencyWindow = new PunctuationMarkFrequencyWindow(analyzerClass);
+                punctuationMarkFrequencyWindow.Show();
+
+                WordFrequencyWindow wordFrequencyWindow = new WordFrequencyWindow(analyzerClass);
+                wordFrequencyWindow.Show();
+
+                CharacterFrequencyPerWordWindow characterFrequencyPerWordWindow = new CharacterFrequencyPerWordWindow(analyzerClass);
+                characterFrequencyPerWordWindow.Show();
+
+
+
                 analyzerWindow.Show();
 
             }
