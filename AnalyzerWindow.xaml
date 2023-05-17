@@ -27,8 +27,8 @@
         <TextBox x:Name="textBox8" HorizontalAlignment="Left" Margin="181,368,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
         <Label x:Name="label9" Content="Average Length Of Words" HorizontalAlignment="Left" Margin="400,32,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox9" HorizontalAlignment="Left" Margin="552,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-        <Label x:Name="label10" Content="Amount of puntuation marks" HorizontalAlignment="Left" Margin="412,74,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox10" HorizontalAlignment="Left" Margin="580,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <Label x:Name="label10" Content="Amount of punctuation marks" HorizontalAlignment="Left" Margin="400,75,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox10" HorizontalAlignment="Left" Margin="574,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
 
     </Grid>
 </Window>
