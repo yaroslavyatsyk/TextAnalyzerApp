@@ -144,7 +144,7 @@ namespace TextAnalyzerFinal
                 result += words[i].Length;
             }
 
-            return result / words.Length;
+            return Math.Round(result / words.Length,1);
 
         }
 
@@ -303,7 +303,7 @@ namespace TextAnalyzerFinal
 
             Dictionary<string, Dictionary<char,int>> keyValuePairs = new Dictionary<string, Dictionary<char, int>>();
 
-            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
