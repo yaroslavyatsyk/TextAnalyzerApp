@@ -108,37 +108,25 @@ namespace TextAnalyzerFinal
 
 
         }
-        private Dictionary<char, int> GetSpecialCharactersOccurance()
+      
+        public Dictionary<char,int> GetFrequencyOfPunctuationMarks()
         {
-            Dictionary<char, int> result = new Dictionary<char, int>();
-
-            foreach(char symbol in sentence)
+            Dictionary<char, int> keyValuePairs = new Dictionary<char, int>();
+            for(int i = 0; i < sentence.Length; i++)
             {
-               if(result.ContainsKey(symbol))
+                if (!char.IsLetterOrDigit(sentence[i]) && !char.IsWhiteSpace(sentence[i]))
                 {
-                    result[symbol]++;
-                }
-               else
-                {
-                    result.Add(symbol, 1);
+                    if (keyValuePairs.ContainsKey(sentence[i]))
+                    {
+                        keyValuePairs[sentence[i]]++;
+                    }
+                    else
+                    {
+                        keyValuePairs.Add(sentence[i], 1);
+                    }
                 }
             }
-            return result;
-        }
-        public List<KeyValuePair<char, int>> GetSpecialList()
-        {
-           Dictionary<char, int> keyValuePairs = GetSpecialCharactersOccurance();
-
-            List<KeyValuePair<char, int>> result = new List<KeyValuePair<char, int>>();
-
-            foreach(KeyValuePair<char,int> item in keyValuePairs)
-            {
-                if(!char.IsLetterOrDigit(item.Key) && !char.IsWhiteSpace(item.Key))
-                {
-                    result.Add(item);
-                }
-            }
-            return result;
+            return keyValuePairs;
         }
 
        
