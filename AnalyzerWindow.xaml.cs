@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using TextAnalyzerFinal;
+
+namespace TextAnalyzerApp
+{
+    /// <summary>
+    /// Interaction logic for AnalyzerWindow.xaml
+    /// </summary>
+    public partial class AnalyzerWindow : Window
+    {
+        TextAnalyzerClass analyzerClass;
+        public AnalyzerWindow(TextAnalyzerClass analyzerClass)
+        {
+            InitializeComponent();
+            this.analyzerClass = analyzerClass;
+
+            //Display the text in the text box
+
+            textBox.Text = analyzerClass.GetString;
+
+            textBox1.Text = analyzerClass.GetLongWord().Item1 + " Length: " + analyzerClass.GetLongWord().Item2;
+
+            textBox2.Text = analyzerClass.GetShortWord().Item1 + " Length: " + analyzerClass.GetShortWord().Item2;
+
+            textBox3.Text = analyzerClass.CalculateWordAmount().ToString();
+        }
+    }
+}

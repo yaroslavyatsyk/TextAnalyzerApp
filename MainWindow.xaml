@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextAnalyzerApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="TextAnalyzer" Height="450" Width="800">
     <Grid>
         <Menu x:Name="menu" Margin="0,0,0,395">
-            <MenuItem Header="File">
-                <MenuItem Header="Open"/>
-                <MenuItem Header="Save"/>
-                <MenuItem Header="Exit"/>
+            <MenuItem Header="File" Height="19">
+                <MenuItem Header="Open" Click="MenuItem_Click"/>
+                <MenuItem Header="Exit" Click="MenuItem_Click_2" />
             </MenuItem>
+            <MenuItem Header="About" Click="MenuItem_Click_3"></MenuItem>
         </Menu>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="280,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="280,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
         <Label x:Name="label" Content="Enter the text, here ->" HorizontalAlignment="Left" Margin="123,160,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Analyze" HorizontalAlignment="Left" Margin="300,344,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Analyze" HorizontalAlignment="Left" Margin="300,344,0,0" VerticalAlignment="Top" Click="button_Click"/>
 
     </Grid>
 </Window>
