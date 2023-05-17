@@ -35,6 +35,14 @@ namespace TextAnalyzerApp
             textBox2.Text = analyzerClass.GetShortWord().Item1 + " Length: " + analyzerClass.GetShortWord().Item2;
 
             textBox3.Text = analyzerClass.CalculateWordAmount().ToString();
+
+            textBox4.Text = analyzerClass.CalculateSpaceAmount().ToString();
+
+            textBox5.Text = analyzerClass.CalculateDigitsAmount().ToString();
+
+            textBox6.Text = analyzerClass.CalculateLettersAmount().ToString();
+
+            textBox7.Text = analyzerClass.GetVowelsAmount().ToString();
         }
     }
 }

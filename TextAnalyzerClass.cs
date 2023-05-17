@@ -287,6 +287,41 @@ namespace TextAnalyzerFinal
             return keyValuePairs;
         }
 
+        public int GetVowelsAmount()
+        {
+            int result = 0;
+
+            string vowels = "aeiou";
+
+            string lowerCased = sentence.ToLower();
+
+            for(int i = 0; i < lowerCased.Length; i++)
+            {
+
+                if (vowels.Contains(lowerCased[i]))
+                {
+                    result++;
+                }
+            }
+            return result;
+        }
+
+        public int GetConsonantsAmount()
+        {
+            int result = 0;
+            string consonants = "bcdfghjklmnpqrstvwxyz";
+            string lowerCased = sentence.ToLower();
+            for (int i = 0; i < lowerCased.Length; i++)
+            {
+                if (consonants.Contains(lowerCased[i]))
+                {
+                    result++;
+                }
+            }
+            return result;
+        }
+
+
 
     }
 }

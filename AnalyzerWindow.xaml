@@ -15,6 +15,14 @@
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="165,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
         <Label x:Name="label3" Content="Amount of words" HorizontalAlignment="Left" Margin="46,163,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="165,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <Label x:Name="label4" Content="Amount of spaces" HorizontalAlignment="Left" Margin="46,0,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Margin="165,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" IsReadOnly="True"/>
+        <Label x:Name="label5" Content="Amount of digits" HorizontalAlignment="Left" Margin="54,244,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Margin="165,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <Label x:Name="label6" Content="Amount of letters" HorizontalAlignment="Left" Margin="48,283,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox6" HorizontalAlignment="Left" Margin="165,287,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <Label x:Name="label7" Content="Amount of vowels" HorizontalAlignment="Left" Margin="58,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.579"/>
+        <TextBox x:Name="textBox7" HorizontalAlignment="Left" Margin="169,324,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
 
     </Grid>
 </Window>
