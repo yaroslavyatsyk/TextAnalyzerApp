@@ -73,6 +73,9 @@ namespace TextAnalyzerApp
 
             WordFrequencyWindow wordFrequencyWindow = new WordFrequencyWindow(analyzerClass);
             wordFrequencyWindow.Show();
+
+            CharacterFrequencyPerWordWindow characterFrequencyPerWordWindow = new CharacterFrequencyPerWordWindow(analyzerClass);
+            characterFrequencyPerWordWindow.Show();
         }
     }
 }
