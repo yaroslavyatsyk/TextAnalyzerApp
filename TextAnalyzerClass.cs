@@ -141,33 +141,7 @@ namespace TextAnalyzerFinal
             return result;
         }
 
-        public int CalculateUpperCaseLettersAmount()
-        {
-            int result = 0;
-
-            foreach(char symbol in sentence)
-            {
-                if(char.IsUpper(symbol))
-                {
-                    result++;
-                }
-            }
-            return result;
-        }
-
-        public int CalculateLowerCaseLettersAmount()
-        {
-            int result = 0;
-
-            foreach (char symbol in sentence)
-            {
-                if (char.IsLower(symbol))
-                {
-                    result++;
-                }
-            }
-            return result;
-        }
+       
 
         public double GetAverageWordLength()
         {
