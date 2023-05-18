@@ -14,9 +14,10 @@
             </MenuItem>
             <MenuItem Header="About" Click="MenuItem_Click_3"></MenuItem>
         </Menu>
-        
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="323,84,0,0" Text="" VerticalAlignment="Top" Width="120" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"  AcceptsTab="True" TextWrapping="Wrap" MaxLines="100"/>
+
        
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="323,84,0,0" Text="" VerticalAlignment="Top" Width="120" TextWrapping="WrapWithOverflow" MaxLines="100" AcceptsReturn="True"/>
+        
         <Label x:Name="label" Content="Enter the text, here ->" HorizontalAlignment="Left" Margin="125,89,0,0" VerticalAlignment="Top"/>
         <Button x:Name="button" Content="Analyze" HorizontalAlignment="Left" Margin="300,344,0,0" VerticalAlignment="Top" Click="button_Click"/>
 

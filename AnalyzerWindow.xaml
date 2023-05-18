@@ -8,9 +8,20 @@
         Title="AnalyzerWindow" Height="450" Width="800">
     <Grid>
         <Label x:Name="label" Content="Entered Text" HorizontalAlignment="Left" Margin="40,28,0,0" VerticalAlignment="Top"/>
-        <ScrollViewer>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="165,19,0,0" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" ScrollViewer.CanContentScroll="True" TextWrapping="Wrap" AcceptsTab="True" MaxLines="100"/>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <TextBox x:Name="textBox"
+             HorizontalAlignment="Left"
+             Margin="165,19,0,0"
+             Text=""
+             VerticalAlignment="Top"
+             Width="120"
+             IsReadOnly="True"
+             TextWrapping="WrapWithOverflow"
+             MaxLines="100"
+                     AcceptsReturn="True"/>
         </ScrollViewer>
+
         <Label x:Name="label1" Content="Long word" HorizontalAlignment="Left" Margin="40,79,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="165,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
         <Label x:Name="label2" Content="Short word" HorizontalAlignment="Left" Margin="46,115,0,0" VerticalAlignment="Top"/>
