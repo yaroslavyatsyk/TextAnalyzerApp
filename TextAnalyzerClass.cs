@@ -152,7 +152,7 @@ namespace TextAnalyzerFinal
 
         public Dictionary<string,int> GetWordsFrequency()
         {
-            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
