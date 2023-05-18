@@ -16,3 +16,5 @@ Main window of the app, here you can type text into the text field, or read text
 
 5. Window with general information of entered text
 ![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/2f4b9fc2-2e3f-4b54-b959-2d306e605564)
+
+The app will receive futher updates and improvements as well.
