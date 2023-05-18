@@ -166,7 +166,7 @@ namespace TextAnalyzerFinal
                 }
                 else
                 {
-                    keyValuePairs.Add(words[i], 1);
+                    keyValuePairs.TryAdd(words[i], 1);
                 }
             }
 
