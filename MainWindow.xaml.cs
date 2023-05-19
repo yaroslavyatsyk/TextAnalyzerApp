@@ -31,32 +31,39 @@ namespace TextAnalyzerApp
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-
-            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            try
             {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
-                string filename = openFileDialog.FileName;
-                string text = System.IO.File.ReadAllText(filename);
-               
-                analyzerClass = new TextAnalyzerClass(text);
+                if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
 
-                AnalyzerWindow analyzerWindow = new AnalyzerWindow(analyzerClass);
+                    string filename = openFileDialog.FileName;
+                    string text = System.IO.File.ReadAllText(filename);
 
-                PunctuationMarkFrequencyWindow punctuationMarkFrequencyWindow = new PunctuationMarkFrequencyWindow(analyzerClass);
-                punctuationMarkFrequencyWindow.Show();
+                    analyzerClass = new TextAnalyzerClass(text);
 
-                WordFrequencyWindow wordFrequencyWindow = new WordFrequencyWindow(analyzerClass);
-                wordFrequencyWindow.Show();
+                    AnalyzerWindow analyzerWindow = new AnalyzerWindow(analyzerClass);
 
-                CharacterFrequencyPerWordWindow characterFrequencyPerWordWindow = new CharacterFrequencyPerWordWindow(analyzerClass);
-                characterFrequencyPerWordWindow.Show();
+                    PunctuationMarkFrequencyWindow punctuationMarkFrequencyWindow = new PunctuationMarkFrequencyWindow(analyzerClass);
+                    punctuationMarkFrequencyWindow.Show();
+
+                    WordFrequencyWindow wordFrequencyWindow = new WordFrequencyWindow(analyzerClass);
+                    wordFrequencyWindow.Show();
+
+                    CharacterFrequencyPerWordWindow characterFrequencyPerWordWindow = new CharacterFrequencyPerWordWindow(analyzerClass);
+                    characterFrequencyPerWordWindow.Show();
 
 
 
-                analyzerWindow.Show();
+                    analyzerWindow.Show();
 
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show("The file you selected is not a text file!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             
         }
