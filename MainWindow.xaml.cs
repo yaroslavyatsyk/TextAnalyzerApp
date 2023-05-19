@@ -112,5 +112,26 @@ namespace TextAnalyzerApp
         {
             textBox.Clear();
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+                if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string filename = saveFileDialog.FileName;
+                    string text = textBox.Text;
+                    System.IO.File.WriteAllText(filename, text);
+                }
+            }
+            catch { 
+            
+                System.Windows.MessageBox.Show("Can not save file!","Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+        }
     }
 }

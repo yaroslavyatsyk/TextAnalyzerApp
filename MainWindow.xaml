@@ -10,6 +10,7 @@
         <Menu x:Name="menu" Margin="0,0,0,395" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <MenuItem Header="File" Height="19">
                 <MenuItem Header="Open" Click="MenuItem_Click"/>
+                <MenuItem Header="Save" Click="MenuItem_Click_1"/>
                 <MenuItem Header="Exit" Click="MenuItem_Click_2" />
             </MenuItem>
             <MenuItem Header="About" Click="MenuItem_Click_3"></MenuItem>
