@@ -77,21 +77,28 @@ namespace TextAnalyzerApp
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string text = textBox.Text;
+            try
+            {
+                string text = textBox.Text;
 
-            analyzerClass = new TextAnalyzerClass(text);
+                analyzerClass = new TextAnalyzerClass(text);
 
-            AnalyzerWindow analyzerWindow = new AnalyzerWindow(analyzerClass);
-            analyzerWindow.Show();
+                AnalyzerWindow analyzerWindow = new AnalyzerWindow(analyzerClass);
+                analyzerWindow.Show();
 
-            WordFrequencyWindow wordFrequencyWindow = new WordFrequencyWindow(analyzerClass);
-            wordFrequencyWindow.Show();
+                WordFrequencyWindow wordFrequencyWindow = new WordFrequencyWindow(analyzerClass);
+                wordFrequencyWindow.Show();
 
-            CharacterFrequencyPerWordWindow characterFrequencyPerWordWindow = new CharacterFrequencyPerWordWindow(analyzerClass);
-            characterFrequencyPerWordWindow.Show();
+                CharacterFrequencyPerWordWindow characterFrequencyPerWordWindow = new CharacterFrequencyPerWordWindow(analyzerClass);
+                characterFrequencyPerWordWindow.Show();
 
-            PunctuationMarkFrequencyWindow punctuationMarkFrequencyWindow = new PunctuationMarkFrequencyWindow(analyzerClass);
-            punctuationMarkFrequencyWindow.Show();
+                PunctuationMarkFrequencyWindow punctuationMarkFrequencyWindow = new PunctuationMarkFrequencyWindow(analyzerClass);
+                punctuationMarkFrequencyWindow.Show();
+            }
+                        catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show("The textfield can not be empty!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
