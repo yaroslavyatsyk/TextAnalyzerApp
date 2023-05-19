@@ -93,5 +93,10 @@ namespace TextAnalyzerApp
             PunctuationMarkFrequencyWindow punctuationMarkFrequencyWindow = new PunctuationMarkFrequencyWindow(analyzerClass);
             punctuationMarkFrequencyWindow.Show();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Clear();
+        }
     }
 }

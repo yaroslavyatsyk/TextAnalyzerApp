@@ -20,6 +20,7 @@
         
         <Label x:Name="label" Content="Enter the text, here ->" HorizontalAlignment="Left" Margin="125,89,0,0" VerticalAlignment="Top"/>
         <Button x:Name="button" Content="Analyze" HorizontalAlignment="Left" Margin="300,344,0,0" VerticalAlignment="Top" Click="button_Click"/>
+        <Button x:Name="button1" Content="Clear" HorizontalAlignment="Left" Margin="509,95,0,0" VerticalAlignment="Top" Click="button1_Click"/>
 
     </Grid>
 </Window>
