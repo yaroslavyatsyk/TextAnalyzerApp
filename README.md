@@ -3,18 +3,23 @@
 Welcome to the app, here you can see samples of app's performance
 
 1. Main window of the app, here you can type text into the text field, or read text from a file.
-![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/e68b7e5b-c982-44c0-abef-7c9b9f30a20b)
+![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/e7be8762-85d1-4e4d-a43c-1652774c5ad8)
 
-3. Window of word's frequency
-![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/3a2c75e5-64ce-4176-b6de-4af961aeabde)
 
-4. Window of character's frequency per a word
-![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/aecc2cc2-f3ea-4385-a8a1-196a82468f69)
+2. Window of word's frequency
+![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/f1916c9d-287e-478b-aae7-82546ef0e40d)
 
-5. Window of punctuation mark's frequency
-![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/2e1ef976-6be1-4d91-b85b-42bdcfd9e447)
 
-6. Window with general information of entered text
-![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/2f4b9fc2-2e3f-4b54-b959-2d306e605564)
+3. Window of character's frequency per a word
+![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/59a410b4-6bc4-4a16-abb5-24e494cf0d72)
+
+
+4. Window of punctuation mark's frequency
+![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/d06004ba-3dcb-459e-9d44-835a9eeeb560)
+
+
+5. Window with general information of entered text
+![image](https://github.com/yaroslavyatsyk/TextAnalyzerApp/assets/31794068/c93470ce-e02b-4dff-9e3c-6fe1bc3b4079)
+
 
 The app will receive futher updates and improvements as well.
