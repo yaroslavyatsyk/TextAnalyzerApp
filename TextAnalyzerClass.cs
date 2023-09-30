@@ -40,7 +40,7 @@ namespace TextAnalyzerFinal
         public Tuple<string, int> GetLongWord()
         {
 
-           string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+           string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
@@ -87,7 +87,7 @@ namespace TextAnalyzerFinal
         public Tuple<string, int> GetShortWord()
 
         {
-           string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+           string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
