@@ -60,6 +60,8 @@ namespace TextAnalyzerApp
                     CharacterFrequencyPerWordWindow characterFrequencyPerWordWindow = new CharacterFrequencyPerWordWindow(analyzerClass);
                     characterFrequencyPerWordWindow.Show();
 
+                    WordsAndTheirLengthsWindow wordsAndTheirLengthsWindow = new WordsAndTheirLengthsWindow(analyzerClass);
+                    wordsAndTheirLengthsWindow.Show();
 
 
                     analyzerWindow.Show();
@@ -106,6 +108,9 @@ namespace TextAnalyzerApp
 
                 PunctuationMarkFrequencyWindow punctuationMarkFrequencyWindow = new PunctuationMarkFrequencyWindow(analyzerClass);
                 punctuationMarkFrequencyWindow.Show();
+
+                WordsAndTheirLengthsWindow wordsAndTheirLengthsWindow = new WordsAndTheirLengthsWindow(analyzerClass);
+                wordsAndTheirLengthsWindow.Show();
             }
                         catch (Exception ex)
             {
@@ -314,6 +319,8 @@ namespace TextAnalyzerApp
                     }
 
                     document.Add(pdfPTable4);
+
+                   
 
                     document.Close();
                     pdfWriter.Close();

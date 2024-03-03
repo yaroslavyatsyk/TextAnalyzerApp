@@ -231,12 +231,12 @@ namespace TextAnalyzerFinal
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-            for(int i = 0; i < words.Length; i++)
+            for (int i = 0; i < words.Length; i++)
             {
-               
+
 
                 Dictionary<char, int> charFrequency = new Dictionary<char, int>();
-                for(int j = 0; j < words[i].Length; j++)
+                for (int j = 0; j < words[i].Length; j++)
                 {
                     if (charFrequency.ContainsKey(words[i][j]))
                     {
@@ -248,11 +248,23 @@ namespace TextAnalyzerFinal
                     }
                 }
                 keyValuePairs.Add(new KeyValuePair<string, Dictionary<char, int>>(words[i], charFrequency));
+
             }
-
-
             return keyValuePairs;
 
+        }
+
+        public List<KeyValuePair<string, int>> GetLengthForEachWord()
+        {
+
+            List<KeyValuePair<string, int>> keyValuePairs = new List<KeyValuePair<string, int>>();
+            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
+            string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < words.Length; i++)
+            {
+                keyValuePairs.Add(new KeyValuePair<string, int>(words[i], words[i].Length));
+            }
+            return keyValuePairs;
         }
 
 
