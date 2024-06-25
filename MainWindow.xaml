@@ -6,23 +6,25 @@
         xmlns:local="clr-namespace:TextAnalyzerApp"
         mc:Ignorable="d"
         Title="TextAnalyzer" Height="450" Width="800">
-    <Grid>
-        <Menu x:Name="menu" Margin="0,0,0,395" VerticalAlignment="Top" HorizontalAlignment="Stretch">
-            <MenuItem Header="File" Height="19">
-                <MenuItem Header="Open" Click="MenuItem_Click"/>
-                <MenuItem Header="Save" Click="MenuItem_Click_1"/>
-                <MenuItem Header="Exit" Click="MenuItem_Click_2" />
-            </MenuItem>
-            <MenuItem Header="About" Click="MenuItem_Click_3"></MenuItem>
-        </Menu>
+    <Viewbox>
+        <Grid Width="753">
+            <Menu x:Name="menu" Margin="0,0,0,395" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                <MenuItem Header="File" Height="19">
+                    <MenuItem Header="Open" Click="MenuItem_Click"/>
+                    <MenuItem Header="Save" Click="MenuItem_Click_1"/>
+                    <MenuItem Header="Exit" Click="MenuItem_Click_2" />
+                </MenuItem>
+                <MenuItem Header="About" Click="MenuItem_Click_3"></MenuItem>
+            </Menu>
 
-       
+
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="323,84,0,0" Text="" VerticalAlignment="Top" Width="120" TextWrapping="Wrap"  AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Auto" MinLines="3" MaxLines="3"/>
-        
-        <Label x:Name="label" Content="Enter the text, here ->" HorizontalAlignment="Left" Margin="125,89,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Analyze" HorizontalAlignment="Left" Margin="300,344,0,0" VerticalAlignment="Top" Click="button_Click"/>
-        <Button x:Name="button1" Content="Clear" HorizontalAlignment="Left" Margin="509,95,0,0" VerticalAlignment="Top" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Get Report" HorizontalAlignment="Left" Margin="443,344,0,0" VerticalAlignment="Top" Click="button2_Click"/>
 
-    </Grid>
+            <Label x:Name="label" Content="Enter the text, here ->" HorizontalAlignment="Left" Margin="125,89,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="button" Content="Analyze" HorizontalAlignment="Left" Margin="300,344,0,0" VerticalAlignment="Top" Click="button_Click"/>
+            <Button x:Name="button1" Content="Clear" HorizontalAlignment="Left" Margin="509,95,0,0" VerticalAlignment="Top" Click="button1_Click"/>
+            <Button x:Name="button2" Content="Get Report" HorizontalAlignment="Left" Margin="443,344,0,0" VerticalAlignment="Top" Click="button2_Click"/>
+
+        </Grid>
+    </Viewbox>
 </Window>

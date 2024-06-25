@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:TextAnalyzerApp"
         mc:Ignorable="d"
         Title="AnalyzerWindow" Height="450" Width="800">
-    <Grid>
-        <Label x:Name="label" Content="Entered Text" HorizontalAlignment="Left" Margin="40,28,0,0" VerticalAlignment="Top"/>
+    <Viewbox>
+        <Grid Width="702">
+            <Label x:Name="label" Content="Entered Text" HorizontalAlignment="Left" Margin="40,28,0,0" VerticalAlignment="Top"/>
 
-      
+
             <TextBox x:Name="textBox"
                      VerticalScrollBarVisibility="Auto"
              HorizontalAlignment="Left"
@@ -24,28 +25,29 @@
                      AcceptsTab="True"
                  MinLines="3"
                      MaxLines="3"/>
-  
 
-        <Label x:Name="label1" Content="Long word" HorizontalAlignment="Left" Margin="40,79,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="165,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" MinLines="2" MaxLines="2"/>
-        <Label x:Name="label2" Content="Short word" HorizontalAlignment="Left" Margin="46,115,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="165,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" MinLines="2" MaxLines="2"/>
-        <Label x:Name="label3" Content="Amount of words" HorizontalAlignment="Left" Margin="46,163,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="165,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-        <Label x:Name="label4" Content="Amount of spaces" HorizontalAlignment="Left" Margin="46,0,0,0" VerticalAlignment="Center"/>
-        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Margin="165,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" IsReadOnly="True"/>
-        <Label x:Name="label5" Content="Amount of digits" HorizontalAlignment="Left" Margin="54,244,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Margin="165,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-        <Label x:Name="label6" Content="Amount of letters" HorizontalAlignment="Left" Margin="48,283,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox6" HorizontalAlignment="Left" Margin="165,287,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-        <Label x:Name="label7" Content="Amount of vowels" HorizontalAlignment="Left" Margin="58,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.579"/>
-        <TextBox x:Name="textBox7" HorizontalAlignment="Left" Margin="169,324,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-        <Label x:Name="label8" Content="Amount of consonants" HorizontalAlignment="Left" Margin="46,364,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox8" HorizontalAlignment="Left" Margin="181,368,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-        <Label x:Name="label9" Content="Average Length Of Words" HorizontalAlignment="Left" Margin="400,32,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox9" HorizontalAlignment="Left" Margin="552,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-        <Label x:Name="label10" Content="Amount of punctuation marks" HorizontalAlignment="Left" Margin="400,75,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox10" HorizontalAlignment="Left" Margin="574,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
 
-    </Grid>
+            <Label x:Name="label1" Content="Long word" HorizontalAlignment="Left" Margin="40,79,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="165,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" MinLines="2" MaxLines="2"/>
+            <Label x:Name="label2" Content="Short word" HorizontalAlignment="Left" Margin="46,115,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="165,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" MinLines="2" MaxLines="2"/>
+            <Label x:Name="label3" Content="Amount of words" HorizontalAlignment="Left" Margin="46,163,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="165,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+            <Label x:Name="label4" Content="Amount of spaces" HorizontalAlignment="Left" Margin="46,0,0,0" VerticalAlignment="Center"/>
+            <TextBox x:Name="textBox4" HorizontalAlignment="Left" Margin="165,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" IsReadOnly="True"/>
+            <Label x:Name="label5" Content="Amount of digits" HorizontalAlignment="Left" Margin="54,244,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox5" HorizontalAlignment="Left" Margin="165,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+            <Label x:Name="label6" Content="Amount of letters" HorizontalAlignment="Left" Margin="48,283,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox6" HorizontalAlignment="Left" Margin="165,287,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+            <Label x:Name="label7" Content="Amount of vowels" HorizontalAlignment="Left" Margin="58,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.579"/>
+            <TextBox x:Name="textBox7" HorizontalAlignment="Left" Margin="169,324,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+            <Label x:Name="label8" Content="Amount of consonants" HorizontalAlignment="Left" Margin="46,364,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox8" HorizontalAlignment="Left" Margin="181,368,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+            <Label x:Name="label9" Content="Average Length Of Words" HorizontalAlignment="Left" Margin="400,32,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox9" HorizontalAlignment="Left" Margin="552,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+            <Label x:Name="label10" Content="Amount of punctuation marks" HorizontalAlignment="Left" Margin="400,75,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox10" HorizontalAlignment="Left" Margin="574,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+
+        </Grid>
+    </Viewbox>
 </Window>

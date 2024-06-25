@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:TextAnalyzerApp"
         mc:Ignorable="d"
         Title="WordFrequencyWindow" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="FrequencyWordDataGrid"/>
 
-    </Grid>
+    <Viewbox>
+        <Grid Width="800" Height="424">
+            <DataGrid x:Name="FrequencyWordDataGrid"/>
+        </Grid>
+    </Viewbox>
+    
 </Window>

@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:TextAnalyzerApp"
         mc:Ignorable="d"
         Title="CharacterFrequencyPerWordWindow" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="dataGrid"/>
+    <Viewbox>
+        <Grid Width="800" Height="413">
+            <DataGrid x:Name="dataGrid"/>
 
-    </Grid>
+        </Grid>
+    </Viewbox>
 </Window>
