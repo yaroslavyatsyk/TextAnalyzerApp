@@ -266,33 +266,50 @@ namespace TextAnalyzerFinal
             }
             return keyValuePairs;
         }
-        public HashSet<char> GetUniqueLetters()
+        public List<char> GetUniqueLetters()
         {
 
-            HashSet<char> uniqueLetters = new HashSet<char>();
+            
+            Dictionary<char, int> frequency = new Dictionary<char, int>();
             var sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
             foreach (char symbol in sanitized)
             {
                 if (char.IsLetter(symbol))
                 {
-                    uniqueLetters.Add(char.ToLower(symbol));
+                   if(frequency.ContainsKey(symbol))
+                    {
+                        frequency[symbol]++;
+                    }
+                    else
+                    {
+                        frequency.Add(symbol, 1);
+                    }
                 }
             }
-            uniqueLetters.OrderBy(c => c);
-            return uniqueLetters;
+
+            return frequency.Keys.Where(c => frequency[c] == 1).ToList();
+
 
         }
-        public HashSet<string> GetUniqueWords()
+        public List<string> GetUniqueWords()
         {
-            HashSet<string> uniqueWords = new HashSet<string>();
+            
+            Dictionary<string, int> frequency = new Dictionary<string, int>();
             string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
             foreach (string word in words)
             {
-                uniqueWords.Add(word);
+                if (frequency.ContainsKey(word))
+                {
+                    frequency[word]++;
+                }
+                else
+                {
+                    frequency.Add(word, 1);
+                }
             }
-            uniqueWords.OrderBy(w => w);
-            return uniqueWords;
+            return frequency.Keys.Where(c => frequency[c] == 1).ToList();
+
         }
 
 
