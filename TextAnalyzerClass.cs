@@ -270,7 +270,8 @@ namespace TextAnalyzerFinal
         {
 
             HashSet<char> uniqueLetters = new HashSet<char>();
-            foreach (char symbol in sentence)
+            var sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
+            foreach (char symbol in sanitized)
             {
                 if (char.IsLetter(symbol))
                 {
