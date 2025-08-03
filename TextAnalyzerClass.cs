@@ -177,14 +177,14 @@ namespace TextAnalyzerFinal
         {
             int result = 0;
 
-            string vowels = "aeiou";
+            string vowels = "aeiouAEIOU";
 
-            string lowerCased = sentence.ToLower();
+          
 
-            for(int i = 0; i < lowerCased.Length; i++)
+            for(int i = 0; i < sentence.Length; i++)
             {
 
-                if (vowels.Contains(lowerCased[i]))
+                if (vowels.Contains(sentence[i]))
                 {
                     result++;
                 }
@@ -195,7 +195,7 @@ namespace TextAnalyzerFinal
         public int GetConsonantsAmount()
         {
             int result = 0;
-            string consonants = "bcdfghjklmnpqrstvwxyz";
+            string consonants = "bcdfghjklmnpqrstvwxyz" + "bcdfghjklmnpqrstvwxyz".ToUpper();
             string lowerCased = sentence.ToLower();
             for (int i = 0; i < lowerCased.Length; i++)
             {
@@ -266,7 +266,33 @@ namespace TextAnalyzerFinal
             }
             return keyValuePairs;
         }
+        public HashSet<char> GetUniqueLetters()
+        {
 
+            HashSet<char> uniqueLetters = new HashSet<char>();
+            foreach (char symbol in sentence)
+            {
+                if (char.IsLetter(symbol))
+                {
+                    uniqueLetters.Add(char.ToLower(symbol));
+                }
+            }
+            uniqueLetters.OrderBy(c => c);
+            return uniqueLetters;
+
+        }
+        public HashSet<string> GetUniqueWords()
+        {
+            HashSet<string> uniqueWords = new HashSet<string>();
+            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
+            string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            foreach (string word in words)
+            {
+                uniqueWords.Add(word);
+            }
+            uniqueWords.OrderBy(w => w);
+            return uniqueWords;
+        }
 
 
     }

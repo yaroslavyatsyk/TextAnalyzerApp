@@ -320,7 +320,59 @@ namespace TextAnalyzerApp
 
                     document.Add(pdfPTable4);
 
-                   
+
+                    document.NewPage();
+                    var titleFont5 = FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD);
+                    Paragraph newParagraph3 = new Paragraph("Words and Their Lengths", titleFont5);
+
+                    newParagraph3.Alignment = Element.ALIGN_CENTER;
+                    document.Add(newParagraph3);
+                    document.Add(new Paragraph("\n"));
+                    PdfPTable pdfPTable5 = new PdfPTable(2);
+                    var wordsAndTheirLengths = analyzerClass.GetLengthForEachWord();
+                    pdfPTable5.AddCell("Word");
+                    pdfPTable5.AddCell("Length");
+                    foreach (var item in wordsAndTheirLengths)
+                    {
+                        pdfPTable5.AddCell(item.Key);
+                        pdfPTable5.AddCell(item.Value.ToString());
+                    }
+
+                    document.Add(pdfPTable5);
+
+                    document.NewPage();
+                    var titleFont6 = FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD);
+                    Paragraph newParagraph4 = new Paragraph("Unique Words", titleFont6);
+                    newParagraph4.Alignment = Element.ALIGN_CENTER;
+                    document.Add(newParagraph4);
+                    document.Add(new Paragraph("\n"));
+                    PdfPTable pdfPTable6 = new PdfPTable(1);
+                    var uniqueWords = analyzerClass.GetUniqueWords();
+                    pdfPTable6.AddCell("Unique Words");
+                    foreach (var item in uniqueWords)
+                    {
+                        pdfPTable6.AddCell(item);
+                    }
+
+                    document.Add(pdfPTable6);
+                    document.NewPage();
+
+                    var titleFont7 = FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD);
+                    
+                    Paragraph newParagraph5 = new Paragraph("Unique letters", titleFont7);
+                    newParagraph5.Alignment = Element.ALIGN_CENTER;
+                    document.Add(newParagraph5);
+                    document.Add(new Paragraph("\n"));
+                    PdfPTable pdfPTable7 = new PdfPTable(1);
+                    var uniqueLetters = analyzerClass.GetUniqueLetters();
+                    pdfPTable7.AddCell("Unique Letters");
+                    foreach (var item in uniqueLetters)
+                    {
+                        pdfPTable7.AddCell(item.ToString());
+                    }
+                    document.Add(pdfPTable7);
+
+
 
                     document.Close();
                     pdfWriter.Close();
