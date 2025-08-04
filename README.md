@@ -22,7 +22,7 @@ Technologies Used:
 
 C#
 
-.NET Framework 6.0
+.NET Framework 7.0
 
 WPF
 
