@@ -196,10 +196,10 @@ namespace TextAnalyzerFinal
         {
             int result = 0;
             string consonants = "bcdfghjklmnpqrstvwxyz" + "bcdfghjklmnpqrstvwxyz".ToUpper();
-            string lowerCased = sentence.ToLower();
-            for (int i = 0; i < lowerCased.Length; i++)
+         
+            for (int i = 0; i < sentence.Length; i++)
             {
-                if (consonants.Contains(lowerCased[i]))
+                if (consonants.Contains(sentence[i]))
                 {
                     result++;
                 }
