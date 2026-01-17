@@ -17,6 +17,12 @@ namespace TextAnalyzerFinal
             sentence = text;
         }
 
+
+        private string GetSanitizedString()
+        {
+            return string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+        }
+
         public string GetString { get { return sentence; } }
         public int CalculateSpaceAmount()
         {
@@ -32,7 +38,7 @@ namespace TextAnalyzerFinal
         }
         public int CalculateWordAmount()
         {
-            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+            string sanitized = GetSanitizedString();
 
             return sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length;
         }
@@ -40,23 +46,24 @@ namespace TextAnalyzerFinal
         public Tuple<string, int> GetLongWord()
         {
 
-           string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
+           string sanitized = GetSanitizedString();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-            string longWord = words[0];
-            int maxLength = words[0].Length;
+            var wordToLengthMap = GetLengthForEachWord();
 
-            for(int i = 0; i < words.Length; i++)
+
+            string longWord = string.Empty;
+            int maxLength = 0;
+
+            for (int i = 0; i < words.Length; i++)
             {
-                if (words[i].Length > maxLength)
+                if (wordToLengthMap[words[i]] > maxLength)
                 {
+                    maxLength = wordToLengthMap[words[i]];
                     longWord = words[i];
-                    maxLength = words[i].Length;
                 }
             }
-
-            
             return Tuple.Create(longWord, maxLength);
         }
         public int CalculateDigitsAmount()
@@ -87,24 +94,25 @@ namespace TextAnalyzerFinal
         public Tuple<string, int> GetShortWord()
 
         {
-           string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
+           string sanitized = GetSanitizedString();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-            string shortWord = words[0];
-            int minLength = words[0].Length;
+            var wordToLengthMap = GetLengthForEachWord();
 
-            for(int i = 0; i < words.Length; i++)
+            int shortestLength = int.MaxValue;
+            string shortWord = string.Empty;
+
+
+            for (int i = 0; i < words.Length; i++)
             {
-                if (words[i].Length < minLength)
+                if (wordToLengthMap[words[i]] < shortestLength)
                 {
+                    shortestLength = wordToLengthMap[words[i]];
                     shortWord = words[i];
-                    minLength = words[i].Length;
                 }
             }
-
-            return Tuple.Create(shortWord, minLength);
-
+            return Tuple.Create(shortWord, shortestLength);
 
 
         }
@@ -135,7 +143,7 @@ namespace TextAnalyzerFinal
         {
             double result = 0d;
 
-           string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c)));
+           string sanitized = GetSanitizedString();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
@@ -152,7 +160,7 @@ namespace TextAnalyzerFinal
 
         public Dictionary<string,int> GetWordsFrequency()
         {
-            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
+            string sanitized = GetSanitizedString();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
@@ -227,7 +235,7 @@ namespace TextAnalyzerFinal
 
             List<KeyValuePair<string, Dictionary<char,int>>> keyValuePairs = new List<KeyValuePair<string, Dictionary<char, int>>>();
 
-            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
+            string sanitized = GetSanitizedString();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
@@ -254,17 +262,25 @@ namespace TextAnalyzerFinal
 
         }
 
-        public List<KeyValuePair<string, int>> GetLengthForEachWord()
-        {
+        public Dictionary<string, int> GetLengthForEachWord() {
 
-            List<KeyValuePair<string, int>> keyValuePairs = new List<KeyValuePair<string, int>>();
-            string sanitized = string.Concat(sentence.Where(c => !char.IsPunctuation(c))).ToLower();
+            Dictionary<string, int> WordToLength = new Dictionary<string, int>();
+            string sanitized = GetSanitizedString();
+
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
             for (int i = 0; i < words.Length; i++)
             {
-                keyValuePairs.Add(new KeyValuePair<string, int>(words[i], words[i].Length));
+                if (!WordToLength.ContainsKey(words[i]))
+                {
+                    WordToLength.Add(words[i], words[i].Length);
+                }
             }
-            return keyValuePairs;
+
+            return WordToLength;
+
+
+
         }
         public List<char> GetUniqueLetters()
         {
