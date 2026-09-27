@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iTextSharp.text;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -324,7 +325,18 @@ namespace TextAnalyzerFinal
                     frequency.Add(word, 1);
                 }
             }
-            return frequency.Keys.Where(c => frequency[c] == 1).ToList();
+
+            List<string> uniqueList = new List<string>();
+
+            foreach (string word in words)
+            {
+                if (frequency[word] == 1)
+                {
+                    uniqueList.Add(word);
+                }
+            }
+
+            return uniqueList;
 
         }
 
