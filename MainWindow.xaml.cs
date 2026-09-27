@@ -18,6 +18,8 @@ using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Paragraph = iTextSharp.text.Paragraph;
+using DocumentFormat.OpenXml.Packaging;
+using iTextSharp.text.pdf.parser;
 
 namespace TextAnalyzerApp
 {
@@ -39,13 +41,43 @@ namespace TextAnalyzerApp
             try
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.Filter = "Text files (*.txt)|*.txt|Word Files (*.docx)|*.docx|PDF Files (*.pdf)|*.pdf";
 
                 if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
 
                     string filename = openFileDialog.FileName;
-                    string text = System.IO.File.ReadAllText(filename);
+
+                    string text = string.Empty;
+
+                    if (filename.EndsWith(".txt"))
+                    {
+                         text = System.IO.File.ReadAllText(filename);
+                        textBox.Text = text;
+                    }
+                    else if (filename.EndsWith(".docx"))
+                    {
+                        using (var wordDoc = WordprocessingDocument.Open(filename, false))
+                        {
+                            var body = wordDoc.MainDocumentPart.Document.Body;
+                        
+                            text = body.InnerText;
+                            textBox.Text = text;
+                        }
+                    }
+                    else if (filename.EndsWith(".pdf"))
+                    {
+                        using (var reader = new PdfReader(filename))
+                        {
+                            StringBuilder textBuilder = new StringBuilder();
+                            for (int i = 1; i <= reader.NumberOfPages; i++)
+                            {
+                                textBuilder.Append(PdfTextExtractor.GetTextFromPage(reader, i));
+                            }
+                           text = textBuilder.ToString();
+                            textBox.Text = text;
+                        }
+                    }
 
                     analyzerClass = new TextAnalyzerClass(text);
 
