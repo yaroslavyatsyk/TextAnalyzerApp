@@ -265,20 +265,20 @@ namespace TextAnalyzerFinal
 
         public Dictionary<string, int> GetLengthForEachWord() {
 
-            Dictionary<string, int> WordToLength = new Dictionary<string, int>();
+            Dictionary<string, int> wordToLength = new Dictionary<string, int>();
             string sanitized = GetSanitizedString();
 
             string[] words = sanitized.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             for (int i = 0; i < words.Length; i++)
             {
-                if (!WordToLength.ContainsKey(words[i]))
+                if (!wordToLength.ContainsKey(words[i]))
                 {
-                    WordToLength.Add(words[i], words[i].Length);
+                    wordToLength.Add(words[i], words[i].Length);
                 }
             }
 
-            return WordToLength;
+            return wordToLength;
 
 
 
@@ -304,7 +304,17 @@ namespace TextAnalyzerFinal
                 }
             }
 
-            return frequency.Keys.Where(c => frequency[c] == 1).ToList();
+            List<char> uniqueList = new List<char>();
+
+            foreach (char symbol in sanitized)
+            {
+                if (char.IsLetter(symbol) && frequency[symbol] == 1)
+                {
+                    uniqueList.Add(symbol);
+                }
+            }
+
+            return uniqueList;
 
 
         }
