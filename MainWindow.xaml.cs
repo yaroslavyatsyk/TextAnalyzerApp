@@ -60,8 +60,8 @@ namespace TextAnalyzerApp
                         using (var wordDoc = WordprocessingDocument.Open(filename, false))
                         {
                             var body = wordDoc.MainDocumentPart.Document.Body;
-                        
-                            text = body.InnerText;
+
+                            text = body.InnerText.Trim();
                             textBox.Text = text;
                         }
                     }
@@ -74,7 +74,7 @@ namespace TextAnalyzerApp
                             {
                                 textBuilder.Append(PdfTextExtractor.GetTextFromPage(reader, i));
                             }
-                           text = textBuilder.ToString();
+                           text = textBuilder.ToString().Trim();
                             textBox.Text = text;
                         }
                     }
